@@ -1,4 +1,4 @@
-const todoList = [{
+const todoList = JSON.parse(localStorage.getItem('todoList')) ||  [{
   name: 'make dinner',
   dueDate:'29-02-2024'
 }, {
@@ -31,6 +31,7 @@ function renderTodoList() {
       deleteButton.addEventListener('click', () => {
         todoList.splice(index, 1);
         renderTodoList();
+        saveToStorage();
       });
     });
 }
@@ -59,5 +60,10 @@ function addTodo() {
   dateInputElement.value = '';
 
   renderTodoList();
+  saveToStorage();
+}
+
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 }
 
