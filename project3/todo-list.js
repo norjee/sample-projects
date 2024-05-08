@@ -1,9 +1,9 @@
 const todoList = [{
   name: 'make dinner',
-  dueDate:'24-12-22'
+  dueDate:'29-02-2024'
 }, {
   name: 'wash dishes',
-  dueDate:'24-12-22'
+  dueDate:'29-02-2024'
 }];
 
 renderTodoList(); //to display the do list at the start on the page
